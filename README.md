@@ -14,16 +14,16 @@ An end-to-end Business Intelligence solution built in **Power BI** to monitor fl
 ## 📸 Dashboard Preview
 
 ### 1️⃣ Flight Performance (Operations Overview)
-![Flight Performance](Screenshots/01_Flight_Performance.png)
+![Flight Performance](01_Flight_Performance.png)
 
 ### 2️⃣ Delays Breakdown (Root-Cause Analysis)
-![Delays Breakdown](Screenshots/02_Delays_Breakdown.png)
+![Delays Breakdown](02_Delays_Breakdown.png)
 
 ### 3️⃣ Revenue & Ticket Sales (Financial Performance)
-![Revenue & Ticket Sales](Screenshots/03_Revenue_Ticket_Sales.png)
+![Revenue & Ticket Sales](03_Revenue_Ticket_Sales.png)
 
 ### 4️⃣ Airport & Weather Insights (Spatial & Environmental)
-![Airport & Weather Insights](Screenshots/04_Airport_Weather_Insights.png)
+![Airport & Weather Insights](04_Airport_Weather_Insights.png)
 
 ---
 

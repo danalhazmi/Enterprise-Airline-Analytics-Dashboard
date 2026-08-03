@@ -1,0 +1,69 @@
+table Dim_Aircraft
+	lineageTag: 28f37088-c61c-4ed3-8394-d70b6aba6f93
+
+	measure 'Total Flights' = COUNTROWS(Fact_Flights)
+		formatString: 0
+		lineageTag: 75e82088-0a3c-4134-81e5-ffff0504d077
+
+	column Aircraft_ID
+		dataType: string
+		lineageTag: 562b723f-de4b-47d2-9528-67fb2871f1f2
+		summarizeBy: none
+		sourceColumn: Aircraft_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tail_Number
+		dataType: string
+		lineageTag: 7b0f6d9c-0992-48a6-a3c7-73119fe1fe02
+		summarizeBy: none
+		sourceColumn: Tail_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: e172c948-e78e-4753-b224-06ebbd7698d6
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturer
+		dataType: string
+		lineageTag: 3b39b178-9cd8-4613-8f14-95389dfcb0c5
+		summarizeBy: none
+		sourceColumn: Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Seats
+		dataType: int64
+		formatString: 0
+		lineageTag: 386f36d6-9e12-4987-94d2-2ffdcd4017ff
+		summarizeBy: none
+		sourceColumn: Total_Seats
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_In_Service
+		dataType: int64
+		formatString: 0
+		lineageTag: ddf7dc92-917b-40b1-b12a-247eff735c4b
+		summarizeBy: none
+		sourceColumn: Year_In_Service
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Aircraft = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\danak\Desktop\Airline_Analytics_Project\Dim_Aircraft.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Aircraft_ID", type text}, {"Tail_Number", type text}, {"Model", type text}, {"Manufacturer", type text}, {"Total_Seats", Int64.Type}, {"Year_In_Service", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

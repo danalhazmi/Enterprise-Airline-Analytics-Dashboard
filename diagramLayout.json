@@ -1,0 +1,126 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 1325,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 38
+          },
+          "nodeIndex": "Dim_Aircraft",
+          "nodeLineageTag": "28f37088-c61c-4ed3-8394-d70b6aba6f93",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 26
+          },
+          "nodeIndex": "Dim_Airports",
+          "nodeLineageTag": "bacfe722-21c5-40be-8adb-bb89b28f003e",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 50
+          },
+          "nodeIndex": "Dim_Passengers",
+          "nodeLineageTag": "daafcdb6-9211-47e6-9f84-50cc592ed16c",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 852,
+            "y": 62
+          },
+          "nodeIndex": "Fact_Delays",
+          "nodeLineageTag": "b4a30443-f9ac-473d-bfae-6dddc9d760d5",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1136,
+            "y": 0
+          },
+          "nodeIndex": "Fact_Flights",
+          "nodeLineageTag": "6f147042-e8e3-4030-b64d-b875dd75c01c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1420,
+            "y": 38
+          },
+          "nodeIndex": "Fact_Tickets",
+          "nodeLineageTag": "cccda741-7c71-4ba1-829b-69db220c775d",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1704,
+            "y": 26
+          },
+          "nodeIndex": "Fact_Weather",
+          "nodeLineageTag": "4fc6e77d-f323-4c23-851e-f0f899bc9dbd",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1988,
+            "y": 98
+          },
+          "nodeIndex": "_Key_Measures (2)",
+          "nodeLineageTag": "4431ecfb-37b3-41c5-9474-e8d0a97ae6e9",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,9 @@
+Airport_Code,Airport_Name,City,Country,Latitude,Longitude,Hub_Type
+JED,King Abdulaziz Intl,Jeddah,Saudi Arabia,21.6796,39.1565,Hub
+RUH,King Khalid Intl,Riyadh,Saudi Arabia,24.9576,46.6988,Hub
+DMM,King Fahd Intl,Dammam,Saudi Arabia,26.4712,49.7978,Major
+LHR,London Heathrow,London,UK,51.47,-0.4543,International
+JFK,John F. Kennedy Intl,New York,USA,40.6413,-73.7781,International
+DXB,Dubai Intl,Dubai,UAE,25.2532,55.3657,International
+CDG,Charles de Gaulle,Paris,France,48.8566,2.3522,International
+IST,Istanbul Airport,Istanbul,Turkey,41.2753,28.7519,International

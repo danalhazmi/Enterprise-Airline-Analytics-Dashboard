@@ -1,0 +1,48 @@
+table Fact_Delays
+	lineageTag: b4a30443-f9ac-473d-bfae-6dddc9d760d5
+
+	column Delay_ID
+		dataType: string
+		lineageTag: a28da09e-1f8f-4af0-a3e0-4c1680788924
+		summarizeBy: none
+		sourceColumn: Delay_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flight_ID
+		dataType: string
+		lineageTag: d54d9c3d-12f0-4e05-9f05-38339bf7a934
+		summarizeBy: none
+		sourceColumn: Flight_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Delay_Reason
+		dataType: string
+		lineageTag: 787b0254-f68b-43dd-972b-72ed0e0b5d5d
+		summarizeBy: none
+		sourceColumn: Delay_Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column Delay_Minutes
+		dataType: int64
+		formatString: 0
+		lineageTag: 11d82dcf-dce4-412a-a1f0-21e39a2ef4c4
+		summarizeBy: sum
+		sourceColumn: Delay_Minutes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Delays = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\danak\Desktop\Airline_Analytics_Project\Fact_Delays.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Delay_ID", type text}, {"Flight_ID", type text}, {"Delay_Reason", type text}, {"Delay_Minutes", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

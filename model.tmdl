@@ -1,0 +1,31 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Dim_Aircraft","Dim_Airports","Dim_Passengers","Fact_Delays","Fact_Flights","Fact_Tickets","Fact_Weather","_Key_Measures","_Key_Measures (2)"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Dim_Aircraft
+ref table Dim_Airports
+ref table Dim_Passengers
+ref table Fact_Delays
+ref table Fact_Flights
+ref table DateTableTemplate_424cd9d2-a515-4eef-af96-4edbcda83a21
+ref table LocalDateTable_ffd0c657-a18e-440f-946b-fc2995af457d
+ref table LocalDateTable_7c525d65-960e-4a98-9798-2ef5e88d8b51
+ref table LocalDateTable_682f1327-7cbd-4d77-9c8c-544577aa634f
+ref table LocalDateTable_ba67a497-1c1f-42ef-990b-a1b2d8be91cf
+ref table Fact_Tickets
+ref table LocalDateTable_3cbcd65f-ad53-42c7-a1af-6638d9e58aac
+ref table Fact_Weather
+ref table '_Key_Measures (2)'
+
+ref cultureInfo en-US
+

@@ -1,0 +1,49 @@
+relationship 5a142cbe-42f7-4374-add8-cf20ca70c1ab
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Flights.Scheduled_Departure
+	toColumn: LocalDateTable_ffd0c657-a18e-440f-946b-fc2995af457d.Date
+
+relationship 4afd7cdb-c252-4229-a623-1ade42e1f0de
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Flights.Actual_Departure
+	toColumn: LocalDateTable_7c525d65-960e-4a98-9798-2ef5e88d8b51.Date
+
+relationship 9b4876ee-8a78-4ca2-b08a-88d6b29127c4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Flights.Scheduled_Arrival
+	toColumn: LocalDateTable_682f1327-7cbd-4d77-9c8c-544577aa634f.Date
+
+relationship e3988716-1792-4d57-be5d-20c320afd58a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Flights.Actual_Arrival
+	toColumn: LocalDateTable_ba67a497-1c1f-42ef-990b-a1b2d8be91cf.Date
+
+relationship AutoDetected_8a3ea43e-5c1d-4474-a2dd-1f8e0193cfd2
+	fromColumn: Fact_Flights.Aircraft_ID
+	toColumn: Dim_Aircraft.Aircraft_ID
+
+relationship AutoDetected_dd239d6c-2005-49bc-bf74-a05ab2aa1558
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Fact_Delays.Flight_ID
+	toColumn: Fact_Flights.Flight_ID
+
+relationship e7bb4ea2-aaa3-43f3-a615-d724fceca7a8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Tickets.Booking_Date
+	toColumn: LocalDateTable_3cbcd65f-ad53-42c7-a1af-6638d9e58aac.Date
+
+relationship AutoDetected_351d5bc9-a688-44d3-b62f-1994c555aa80
+	fromColumn: Fact_Tickets.Flight_ID
+	toColumn: Fact_Flights.Flight_ID
+
+relationship AutoDetected_8f80902c-ad01-4f8d-898d-372a1061b43c
+	fromColumn: Fact_Weather.Airport_Code
+	toColumn: Dim_Airports.Airport_Code
+
+relationship abb7cd95-afa9-f805-db68-ffa68d8265f3
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Fact_Weather.Date
+	toColumn: Fact_Flights.Scheduled_Departure
+

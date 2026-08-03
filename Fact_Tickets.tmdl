@@ -1,0 +1,73 @@
+table Fact_Tickets
+	lineageTag: cccda741-7c71-4ba1-829b-69db220c775d
+
+	column Ticket_ID
+		dataType: string
+		lineageTag: cb953ae4-5b47-47f3-9949-f61c1827f77c
+		summarizeBy: none
+		sourceColumn: Ticket_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flight_ID
+		dataType: string
+		lineageTag: c6371c7e-047f-43d1-81a5-a197dda47147
+		summarizeBy: none
+		sourceColumn: Flight_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Passenger_ID
+		dataType: string
+		lineageTag: 493b1691-8ec5-45de-8a37-d61fb17030ab
+		summarizeBy: none
+		sourceColumn: Passenger_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Class
+		dataType: string
+		lineageTag: e8c5d4cf-570b-4755-bc58-94de86aa176a
+		summarizeBy: none
+		sourceColumn: Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fare_Amount_USD
+		dataType: double
+		lineageTag: b9ab8cea-c6e7-4fdb-b653-d31ede6c1e6e
+		summarizeBy: sum
+		sourceColumn: Fare_Amount_USD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Booking_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 268c5553-a5c3-45db-89a5-76fe04730c42
+		summarizeBy: none
+		sourceColumn: Booking_Date
+
+		variation Variation
+			isDefault
+			relationship: e7bb4ea2-aaa3-43f3-a615-d724fceca7a8
+			defaultHierarchy: LocalDateTable_3cbcd65f-ad53-42c7-a1af-6638d9e58aac.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Fact_Tickets = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\danak\Desktop\Airline_Analytics_Project\Fact_Tickets.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Ticket_ID", type text}, {"Flight_ID", type text}, {"Passenger_ID", type text}, {"Class", type text}, {"Fare_Amount_USD", type number}, {"Booking_Date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

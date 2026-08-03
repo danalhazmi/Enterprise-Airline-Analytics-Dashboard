@@ -1,0 +1,137 @@
+table Fact_Flights
+	lineageTag: 6f147042-e8e3-4030-b64d-b875dd75c01c
+
+	column Flight_ID
+		dataType: string
+		lineageTag: a58d5b16-9c7e-4d01-b563-bce4bee2163c
+		summarizeBy: none
+		sourceColumn: Flight_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flight_Number
+		dataType: string
+		lineageTag: db2a4fe3-208a-4dac-b85d-eb30d12cab4d
+		summarizeBy: none
+		sourceColumn: Flight_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin_Airport
+		dataType: string
+		lineageTag: 8248ce67-5928-4d46-9fd3-76bc3378be8d
+		summarizeBy: none
+		sourceColumn: Origin_Airport
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination_Airport
+		dataType: string
+		lineageTag: c7c7c3d7-8d83-4839-9328-a9b23bbca489
+		summarizeBy: none
+		sourceColumn: Destination_Airport
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aircraft_ID
+		dataType: string
+		lineageTag: e4cae9a4-d573-4319-96b8-2978e8a25e78
+		summarizeBy: none
+		sourceColumn: Aircraft_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scheduled_Departure
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 14f9a906-5f36-4f22-9a52-10a86c0543cf
+		summarizeBy: none
+		sourceColumn: Scheduled_Departure
+
+		variation Variation
+			isDefault
+			relationship: 5a142cbe-42f7-4374-add8-cf20ca70c1ab
+			defaultHierarchy: LocalDateTable_ffd0c657-a18e-440f-946b-fc2995af457d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual_Departure
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7aea69b8-dffd-4c44-8636-8834d4f518e8
+		summarizeBy: none
+		sourceColumn: Actual_Departure
+
+		variation Variation
+			isDefault
+			relationship: 4afd7cdb-c252-4229-a623-1ade42e1f0de
+			defaultHierarchy: LocalDateTable_7c525d65-960e-4a98-9798-2ef5e88d8b51.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scheduled_Arrival
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8e8ae9db-35d5-402c-a860-9fb93793f028
+		summarizeBy: none
+		sourceColumn: Scheduled_Arrival
+
+		variation Variation
+			isDefault
+			relationship: 9b4876ee-8a78-4ca2-b08a-88d6b29127c4
+			defaultHierarchy: LocalDateTable_682f1327-7cbd-4d77-9c8c-544577aa634f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual_Arrival
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2591fbe8-4a52-4593-9001-bc83e3d0a9df
+		summarizeBy: none
+		sourceColumn: Actual_Arrival
+
+		variation Variation
+			isDefault
+			relationship: e3988716-1792-4d57-be5d-20c320afd58a
+			defaultHierarchy: LocalDateTable_ba67a497-1c1f-42ef-990b-a1b2d8be91cf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flight_Status
+		dataType: string
+		lineageTag: ad22bdf7-0f8d-4418-ac94-a3bac4c9ce21
+		summarizeBy: none
+		sourceColumn: Flight_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Distance_KM
+		dataType: int64
+		formatString: 0
+		lineageTag: 03924111-7df9-42ad-8ddd-338a4a00c926
+		summarizeBy: sum
+		sourceColumn: Distance_KM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Delay_Minutes
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b44d47e-48ef-448f-8c82-3465135c81b2
+		summarizeBy: sum
+		sourceColumn: Delay_Minutes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Flights = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\danak\Desktop\Airline_Analytics_Project\Fact_Flights.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Flight_ID", type text}, {"Flight_Number", type text}, {"Origin_Airport", type text}, {"Destination_Airport", type text}, {"Aircraft_ID", type text}, {"Scheduled_Departure", type datetime}, {"Actual_Departure", type datetime}, {"Scheduled_Arrival", type datetime}, {"Actual_Arrival", type datetime}, {"Flight_Status", type text}, {"Distance_KM", Int64.Type}, {"Delay_Minutes", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

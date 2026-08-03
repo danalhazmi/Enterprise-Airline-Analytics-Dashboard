@@ -1,0 +1,50 @@
+table '_Key_Measures (2)'
+	lineageTag: 4431ecfb-37b3-41c5-9474-e8d0a97ae6e9
+
+	measure 'On Time Performance %' =
+			
+			DIVIDE(
+			    CALCULATE(COUNTROWS(Fact_Flights), Fact_Flights[Flight_Status] = "On-Time"),
+			    COUNTROWS(Fact_Flights),
+			    0
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 07ff20b7-f08d-4a8f-8054-28ce0b6f441e
+
+	measure 'Total Delay Minutes' = SUM(Fact_Flights[Delay_Minutes])
+		formatString: 0
+		lineageTag: 4c3f6c6c-be1b-44aa-860c-29fc6adc7a6a
+
+	measure 'Load Factor %' =
+			
+			VAR TotalSeats = SUM(Dim_Aircraft[Total_Seats])
+			VAR TotalPassengers = COUNTROWS(Fact_Tickets)
+			RETURN
+			DIVIDE(TotalPassengers, TotalSeats, 0)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: ef8cd1c5-8aac-4806-892a-ac80a74d07aa
+
+	measure 'Avg Delay per Flight' = AVERAGE(Fact_Delays[Delay_Minutes])
+		lineageTag: c65d9cc0-0a0f-434c-b69d-6efb704e27a0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column1
+		dataType: string
+		lineageTag: cb8d55de-cc81-44a2-a558-5908f76030d7
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '_Key_Measures (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

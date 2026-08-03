@@ -1,0 +1,54 @@
+table Dim_Passengers
+	lineageTag: daafcdb6-9211-47e6-9f84-50cc592ed16c
+
+	column Column1
+		dataType: string
+		lineageTag: 01d40c03-79f4-426d-bd51-ae3c37c2cd33
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: fb03cb50-67a3-4297-af8b-7b7835efaacf
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 681899d5-9441-4bc5-920e-e929fcbe4319
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 6321e757-ee44-42c8-9c28-f429ad78ab1c
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: cd6d7bb2-c076-491e-858e-0b5795e482b1
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Passengers = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\danak\Desktop\Airline_Analytics_Project\Dim_Passengers.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

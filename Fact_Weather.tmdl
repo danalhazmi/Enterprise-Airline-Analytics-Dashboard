@@ -1,0 +1,80 @@
+table Fact_Weather
+	lineageTag: 4fc6e77d-f323-4c23-851e-f0f899bc9dbd
+
+	column Weather_ID
+		dataType: string
+		lineageTag: fa46f764-6d54-4b48-8619-96ee03fe1dad
+		summarizeBy: none
+		sourceColumn: Weather_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Airport_Code
+		dataType: string
+		lineageTag: 2318798e-d64a-4ea5-ae72-b65ff2e782ae
+		summarizeBy: none
+		sourceColumn: Airport_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: dd/mm/yy
+		lineageTag: 74323be2-8d7d-4842-a4a9-cb2c00bfa7a6
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Temperature_C
+		dataType: int64
+		formatString: 0
+		lineageTag: 68b8e906-200e-4300-bea1-1129c57d83c8
+		summarizeBy: sum
+		sourceColumn: Temperature_C
+
+		annotation SummarizationSetBy = Automatic
+
+	column Wind_Speed_Kts
+		dataType: int64
+		formatString: 0
+		lineageTag: 22e0f69d-55bd-4dd0-a290-7c06b71b3943
+		summarizeBy: sum
+		sourceColumn: Wind_Speed_Kts
+
+		annotation SummarizationSetBy = Automatic
+
+	column Visibility_KM
+		dataType: double
+		lineageTag: 383dd5a7-d07c-4ce0-87af-8cb7a17d9722
+		summarizeBy: sum
+		sourceColumn: Visibility_KM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Condition
+		dataType: string
+		lineageTag: fce69096-9d3b-4ccb-b6c0-91f13573fc78
+		summarizeBy: none
+		sourceColumn: Condition
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Weather = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\danak\Desktop\Airline_Analytics_Project\Fact_Weather.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Weather_ID", type text}, {"Airport_Code", type text}, {"Date", type date}, {"Temperature_C", Int64.Type}, {"Wind_Speed_Kts", Int64.Type}, {"Visibility_KM", type number}, {"Condition", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

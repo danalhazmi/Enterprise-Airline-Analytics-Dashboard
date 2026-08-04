@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 Executive Summary
+## Executive Summary
 An end-to-end Business Intelligence solution built in **Power BI** to monitor flight operations, evaluate delay root causes, track revenue yield across cabin classes, and analyze spatial-temporal weather impact across major international airports.
 
 ---
@@ -36,7 +36,7 @@ Aviation operations handle high-volume transactional data across operational, co
 
 ---
 
-## 🏗️ Data Architecture & Modeling
+## Data Architecture & Modeling
 The solution uses an optimized **Star Schema** data model to enable accurate aggregation and high-performance DAX evaluations.
 
 ```text

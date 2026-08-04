@@ -11,7 +11,7 @@ An end-to-end Business Intelligence solution built in **Power BI** to monitor fl
 
 ---
 
-## 📸 Dashboard Preview
+## Dashboard Preview
 
 ### 1️⃣ Flight Performance (Operations Overview)
 ![Flight Performance](01_Flight_Performance.png)

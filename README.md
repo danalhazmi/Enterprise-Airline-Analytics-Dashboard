@@ -2,15 +2,15 @@
 
 ### Airline Operations, Revenue & Performance Intelligence Platform
 
-📊 **Power BI Analytics Dashboard**
+📊 **Business Intelligence & Analytics Solution**
 
 > **Turn airline data into operational intelligence.**
 
 Enterprise Airline Analytics Dashboard is a **Business Intelligence and Analytics solution** designed to transform airline operational, commercial, airport, and weather-related data into an integrated analytical environment.
 
-Instead of treating flight performance, delays, revenue, airports, and environmental conditions as isolated datasets, the project connects these dimensions through a structured **Star Schema data model** and interactive **Power BI dashboards**.
+Instead of treating flight performance, delays, revenue, airports, routes, and weather conditions as isolated areas, the project connects these analytical dimensions through a structured **Star Schema data model** and interactive **Power BI dashboards**.
 
-The solution demonstrates how enterprise data can be transformed through:
+The solution demonstrates how operational data can move through:
 
 **Data → Preparation → Data Modeling → DAX → Visualization → Analysis → Business Insight**
 
@@ -18,40 +18,44 @@ The solution demonstrates how enterprise data can be transformed through:
 
 ## 🚀 Project Overview
 
-Airline organizations generate large amounts of data across different operational and commercial areas, including:
+Airline organizations generate large amounts of information across multiple operational and commercial areas, including:
 
 * Flight Operations
 * Flight Performance
 * Delays
 * Revenue
+* Ticket Sales
 * Airports
 * Routes
 * Weather Conditions
 * Operational KPIs
 * Historical Performance
 
-When these data sources are analyzed separately, it becomes more difficult to understand the relationships between operational performance, delays, revenue, airport activity, and external conditions.
+When these areas are analyzed separately, understanding the complete operational and commercial picture becomes more difficult.
 
-**This project addresses that challenge by integrating these analytical dimensions into a centralized Business Intelligence solution.**
+**This project addresses this challenge by bringing these analytical dimensions together into a unified Business Intelligence solution.**
 
-The dashboard provides an interactive environment for exploring airline performance and identifying patterns that can support **operational monitoring, performance analysis, and data-driven decision-making**.
+The dashboard provides an interactive environment for exploring airline performance, identifying operational patterns, analyzing revenue and ticket sales, and examining airport and weather-related insights.
+
+The project was designed as an **integrated analytical system**, rather than a collection of independent visualizations.
 
 ---
 
 ## 🎯 Project Objective
 
-The main objective of this project is to transform airline data into an integrated **Business Intelligence solution** that enables users to:
+The main objective of this project is to transform airline data into a structured **Business Intelligence solution** that supports:
 
-* Monitor overall flight performance
-* Analyze flight delays and their contributing factors
-* Evaluate revenue performance
-* Compare airport and route performance
-* Explore the relationship between weather and operations
-* Track important operational KPIs
-* Identify performance patterns and trends
-* Support data-driven operational decisions
+* Flight performance monitoring
+* Delay analysis
+* Revenue and ticket sales analysis
+* Airport performance analysis
+* Weather-related operational analysis
+* KPI monitoring
+* Trend identification
+* Comparative analysis
+* Data-driven decision-making
 
-The project focuses not only on visualization, but also on the complete analytical process from **data preparation and modeling to business intelligence and insight generation**.
+The project demonstrates the complete analytical process from **data preparation and modeling to dashboard development and business insight generation**.
 
 ---
 
@@ -59,66 +63,74 @@ The project focuses not only on visualization, but also on the complete analytic
 
 The project was built around one core question:
 
-> **How can disconnected airline data be transformed into a unified view of operational and commercial performance?**
+> **How can complex airline data be transformed into a unified view of operational and commercial performance?**
 
-The solution connects multiple analytical dimensions into one environment:
+The solution connects multiple analytical areas:
 
 * Flight Operations
+* Flight Performance
 * Delays
 * Revenue
+* Ticket Sales
 * Airports
 * Routes
 * Weather
 * Performance Metrics
 * Business Intelligence
 
-This creates a connected analytical flow from raw data to actionable business insights.
+This creates a connected analytical flow from raw information to meaningful business insights.
 
 ---
 
 ## ✨ Key Features
 
-| Feature                 | Description                                                                                     |
-| ----------------------- | ----------------------------------------------------------------------------------------------- |
-| ✈️ Flight Performance   | Monitor flight activity, operational performance, and key performance indicators.               |
-| ⏱️ Delay Intelligence   | Analyze flight delays, delay frequency, duration, and operational patterns.                     |
-| 💰 Revenue Analytics    | Explore revenue performance across relevant business and operational dimensions.                |
-| 🛫 Airport Intelligence | Compare airport-level activity and operational performance.                                     |
-| 🗺️ Route Analysis      | Analyze performance across different routes and flight operations.                              |
-| 🌦️ Weather Analysis    | Explore the relationship between weather conditions and flight performance.                     |
-| 📊 Executive Analytics  | Interactive Power BI dashboards designed to support performance monitoring and decision-making. |
-| 🧮 DAX Analytics        | Custom DAX measures used to calculate KPIs and analytical metrics.                              |
-| 🧩 Star Schema          | Structured dimensional data model designed to support scalable analytical reporting.            |
+| Feature                   | Description                                                                            |
+| ------------------------- | -------------------------------------------------------------------------------------- |
+| ✈️ Flight Performance     | Monitor flight activity, operational performance, and key performance indicators.      |
+| ⏱️ Delay Intelligence     | Analyze delays, delay patterns, and operational performance.                           |
+| 💰 Revenue Analytics      | Analyze revenue and ticket sales performance across the available business dimensions. |
+| 🎟️ Ticket Sales Analysis | Explore ticket sales and related commercial performance.                               |
+| 🛫 Airport Intelligence   | Compare airport activity and operational performance.                                  |
+| 🗺️ Route Analysis        | Analyze airline operations across different routes and flight dimensions.              |
+| 🌦️ Weather Insights      | Explore weather-related information alongside airline operational performance.         |
+| 📊 Interactive Analytics  | Explore KPIs, trends, and performance metrics through interactive Power BI dashboards. |
+| 🧮 DAX Analytics          | Use DAX measures to create dynamic analytical calculations and KPIs.                   |
+| 🧩 Star Schema            | Organize analytical data through a structured dimensional data model.                  |
 
 ---
 
 ## 🧩 Data Architecture
 
-The analytical solution is built around a **Star Schema** data model.
+The analytical solution is structured around a **Star Schema** data model.
 
-The model separates measurable business events from descriptive dimensions, allowing the dashboard to efficiently analyze airline operations from multiple perspectives.
+The model separates measurable business events from descriptive dimensions, allowing airline data to be analyzed from multiple perspectives.
 
 ### Fact Tables
 
-Fact tables contain measurable operational and business events such as:
+The fact layer contains measurable airline-related events and metrics used for analytical calculations.
+
+These include information related to areas such as:
 
 * Flight Activity
 * Flight Performance
+* Delays
 * Revenue
-* Delay Information
+* Ticket Sales
 
 ### Dimension Tables
 
-Dimension tables provide descriptive context for analysis, including areas such as:
+The dimensional layer provides descriptive context for analysis.
+
+It includes dimensions related to areas such as:
 
 * Date
 * Airport
 * Airline
 * Route
 * Weather
-* Other relevant business dimensions
+* Other relevant analytical attributes
 
-This structure enables users to analyze operational and commercial metrics across multiple dimensions while maintaining a clear analytical model.
+This structure allows the dashboard to analyze operational and commercial metrics across different dimensions while maintaining a clear and organized analytical model.
 
 ---
 
@@ -145,16 +157,16 @@ Interactive Dashboards
     ↓
 Business Analysis
     ↓
-Actionable Insights
+Business Insights
 ```
 
-This workflow demonstrates how raw datasets can be transformed into a structured analytical solution.
+This workflow demonstrates how raw airline data can be transformed into a structured analytical environment.
 
 ---
 
 ## 🧹 Data Preparation
 
-Before visualization, the data is prepared for analytical use.
+Before developing the dashboards, the data is prepared for analytical use.
 
 The preparation process focuses on areas such as:
 
@@ -166,95 +178,107 @@ The preparation process focuses on areas such as:
 * Relationship Preparation
 * Analytical Structure
 
-The goal is to ensure that the resulting dataset can support reliable calculations and meaningful business analysis.
+The objective is to prepare reliable data that can support meaningful calculations, comparisons, and visual analysis.
 
 ---
 
 ## 🧮 DAX & KPI Development
 
-The project uses **DAX (Data Analysis Expressions)** to create analytical measures and KPIs within Power BI.
+The project uses **DAX (Data Analysis Expressions)** within Power BI to create analytical measures and KPIs.
 
-These measures support analysis across different dimensions and dashboard views.
+These calculations support dynamic analysis across different dashboard views and dimensions.
 
-The KPI framework focuses on areas such as:
+The KPI framework focuses on areas including:
 
 * Flight Performance
 * Delay Performance
 * Revenue
+* Ticket Sales
 * Airport Activity
 * Operational Trends
 * Comparative Performance
 
-DAX allows the dashboard to dynamically respond to filters, selections, and different analytical perspectives.
+DAX measures allow the dashboards to dynamically respond to filters and user selections, enabling users to explore the data from different analytical perspectives.
 
 ---
 
 ## 📊 Dashboard
 
-The Power BI solution is organized into multiple analytical views, allowing users to explore airline performance from different perspectives.
+The Power BI solution is organized into four main analytical views.
+
+Each dashboard focuses on a specific aspect of airline operations and performance.
 
 ---
 
-### ✈️ Flight Performance
+### 1. ✈️ Flight Performance
 
-The Flight Performance view provides an overview of airline operations and performance.
+The **Flight Performance** dashboard provides an overview of airline operations and overall flight performance.
 
 It focuses on areas such as:
 
 * Flight Activity
 * Operational KPIs
-* Performance Trends
-* Flight Distribution
+* Performance Metrics
+* Trends
 * Comparative Analysis
 
-The objective is to provide users with a high-level understanding of overall flight performance.
+The purpose of this view is to provide users with a high-level understanding of airline flight performance.
+
+![Flight Performance Dashboard](01_Flight_Performance.png)
 
 ---
 
-### ⏱️ Delay Analysis
+### 2. ⏱️ Delays Breakdown
 
-The Delay Analysis view focuses on identifying patterns in flight delays.
+The **Delays Breakdown** dashboard focuses on understanding flight delay patterns and operational performance.
 
-It allows users to explore:
+It provides an analytical view of:
 
-* Delay Frequency
-* Delay Duration
+* Delay Information
 * Delay Patterns
+* Delay Categories
 * Operational Performance
-* Comparative Delay Analysis
+* Comparative Analysis
 
-This view helps identify areas where operational performance may require further investigation.
+This view helps users investigate where delays occur and identify patterns that may require further operational analysis.
 
----
-
-### 💰 Revenue Analysis
-
-The Revenue Analysis view focuses on the commercial side of airline operations.
-
-It provides analytical perspectives for understanding:
-
-* Revenue Performance
-* Revenue Distribution
-* Comparative Revenue Trends
-* Business Performance
-
-This allows operational and commercial information to be analyzed within the same Business Intelligence environment.
+![Delays Breakdown Dashboard](02_Delays_Breakdown.png)
 
 ---
 
-### 🛫 Airport & Weather Analysis
+### 3. 💰 Revenue & Ticket Sales
 
-The Airport & Weather view connects operational performance with airport and environmental information.
+The **Revenue & Ticket Sales** dashboard focuses on the commercial performance of the airline data.
 
-It allows users to explore:
+It provides insights into:
 
-* Airport Performance
+* Revenue
+* Ticket Sales
+* Commercial Performance
+* Revenue Trends
+* Comparative Analysis
+
+This allows commercial information to be analyzed alongside operational performance within the same Business Intelligence environment.
+
+![Revenue & Ticket Sales Dashboard](03_Revenue_Ticket_Sales.png)
+
+---
+
+### 4. 🛫 Airport & Weather Insights
+
+The **Airport & Weather Insights** dashboard combines airport-level information with weather-related data.
+
+It provides analytical perspectives across areas such as:
+
 * Airport Activity
+* Airport Performance
 * Weather Conditions
 * Operational Patterns
-* Potential Relationships Between Weather and Flight Performance
+* Comparative Analysis
 
-This creates a broader view of the factors that may influence airline operations.
+This view allows users to explore airline performance from both geographic and environmental perspectives.
+
+![Airport & Weather Insights Dashboard](04_Airport_Weather_Insights.png)
 
 ---
 
@@ -262,83 +286,69 @@ This creates a broader view of the factors that may influence airline operations
 
 The project follows a **Business Intelligence approach rather than a visualization-only approach**.
 
-The dashboards are designed to help users move through three levels of analysis:
+The dashboards support different levels of analytical understanding.
 
 ### 1. Descriptive Analysis
 
 **What happened?**
 
-Users can monitor:
+The dashboards allow users to monitor:
 
 * Flight activity
 * Delays
 * Revenue
-* Airport performance
+* Ticket sales
+* Airport activity
 * Operational KPIs
+
+---
 
 ### 2. Diagnostic Analysis
 
-**Why might it have happened?**
+**What patterns can be identified?**
 
-Users can explore relationships between:
+Users can explore relationships and variations across:
 
 * Airports
 * Routes
 * Delays
 * Weather
-* Operational performance
+* Flight performance
+* Revenue
+* Ticket sales
+
+---
 
 ### 3. Decision Support
 
-**What should be investigated or improved?**
+**Where should attention be focused?**
 
-The analytical environment helps identify:
+The analytical environment helps users identify:
 
-* Operational bottlenecks
-* Performance variations
+* Operational performance variations
 * Delay patterns
 * Revenue patterns
+* Airport-level differences
 * Areas requiring further investigation
 
+The goal is to transform data into information that can support **better operational and business decisions**.
+
 ---
 
-## 💡 Business Insights
+## 💡 Analytical Questions
 
-The dashboard is designed to help stakeholders identify meaningful patterns within airline operations rather than simply displaying raw numbers.
+The dashboard is designed to support questions such as:
 
-Potential analytical questions supported by the solution include:
-
-* Which airports demonstrate the highest operational activity?
-* Which routes experience greater delay patterns?
-* What are the major areas associated with flight delays?
-* How does operational performance change over time?
-* Which areas contribute most significantly to revenue?
-* Are there observable relationships between weather conditions and flight performance?
+* How is overall flight performance changing?
+* Which areas show higher levels of delay activity?
+* What patterns can be observed in flight delays?
+* How does revenue and ticket sales performance vary?
+* Which airports demonstrate higher operational activity?
+* What differences can be observed across routes?
+* What weather-related patterns can be identified?
 * Which operational areas require further investigation?
 
-These analytical questions demonstrate how the dashboard can support **business-oriented decision-making**.
-
----
-
-## 🖥️ Dashboard Screenshots
-
-### Flight Performance
-
-![Flight Performance Dashboard](screenshots/flight-performance.png)
-
-### Delay Analysis
-
-![Delay Analysis Dashboard](screenshots/delay-analysis.png)
-
-### Revenue Analysis
-
-![Revenue Analysis Dashboard](screenshots/revenue-analysis.png)
-
-### Airport & Weather Analysis
-
-![Airport & Weather Dashboard](screenshots/airport-weather.png)
-
-> Replace the image paths above with the exact screenshot filenames available in the repository.
+These questions demonstrate how the solution can be used as a **Business Intelligence and decision-support environment**.
 
 ---
 
@@ -356,13 +366,13 @@ These analytical questions demonstrate how the dashboard can support **business-
 * Dimension Tables
 * Data Relationships
 
-### Data
+### Data Analytics
 
-* Structured airline datasets
-* Operational data
-* Revenue data
-* Airport data
-* Weather-related data
+* Data Cleaning
+* Data Transformation
+* KPI Development
+* Business Analysis
+* Data Visualization
 
 ---
 
@@ -371,23 +381,21 @@ These analytical questions demonstrate how the dashboard can support **business-
 ```text
 Enterprise-Airline-Analytics-Dashboard/
 │
-├── screenshots/
-│   ├── flight-performance.png
-│   ├── delay-analysis.png
-│   ├── revenue-analysis.png
-│   └── airport-weather.png
+├── 01_Flight_Performance.png
+├── 02_Delays_Breakdown.png
+├── 03_Revenue_Ticket_Sales.png
+├── 04_Airport_Weather_Insights.png
 │
-├── data/
-│   ├── ...
+├── Enterprise Airline Analytics Dashboard.pbip
 │
-├── powerbi/
-│   ├── ...
+├── Enterprise Airline Analytics Dashboard.Dataset/
+│
+├── Enterprise Airline Analytics Dashboard.Report/
 │
 ├── README.md
-└── ...
+│
+└── LICENSE
 ```
-
-> The structure above represents the main organization of the project. Update the file and folder names to match the exact repository structure.
 
 ---
 
@@ -397,15 +405,17 @@ This project demonstrates practical experience in:
 
 * Business Intelligence
 * Data Analytics
-* Power BI
+* Microsoft Power BI
 * DAX
 * Data Modeling
 * Star Schema Design
+* Fact & Dimension Modeling
 * KPI Development
 * Dashboard Design
+* Data Visualization
 * Operational Analytics
 * Revenue Analytics
-* Data Visualization
+* Performance Analysis
 * Business-Oriented Analysis
 * Decision Support
 
@@ -421,7 +431,7 @@ Potential future enhancements include:
 * Revenue forecasting
 * Advanced anomaly detection
 * Machine Learning-based delay prediction
-* Automated alerting for operational KPIs
+* Automated operational alerts
 * Expanded airport and route intelligence
 
 These enhancements could extend the solution from descriptive and diagnostic analytics toward **predictive and prescriptive analytics**.
@@ -436,17 +446,18 @@ The project combines:
 
 **Data Preparation + Data Modeling + Star Schema + DAX + Power BI + Business Analysis**
 
-to create an analytical environment that provides visibility into:
+to provide visibility across:
 
-* Flight Operations
+* Flight Performance
 * Delays
 * Revenue
+* Ticket Sales
 * Airports
 * Routes
 * Weather
 * Operational Performance
 
-The ultimate goal is to demonstrate how structured data and Business Intelligence can transform complex operational information into **clear insights that support better decisions**.
+The ultimate goal is to demonstrate how structured data, dimensional modeling, and Business Intelligence can transform complex airline information into **clear analytical insights that support better decisions**.
 
 ---
 
@@ -455,7 +466,6 @@ The ultimate goal is to demonstrate how structured data and Business Intelligenc
 **Dana Khalid Alhazmi**
 
 Information Systems Graduate
-Data & Business Intelligence | Data-Driven Enterprise Solutions
+Data & Business Intelligence | Building Data-Driven Enterprise Solutions
 
 [GitHub](https://github.com/danalhazmi)
-
